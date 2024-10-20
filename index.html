@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naufal Habibi - Hardware and Software Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        h1, h2, h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+            }
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        li::before {
+            content: '▹';
+            position: absolute;
+            left: -20px;
+            color: #ff00de;
+        }
+
+        .project-photos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .project-photo {
+            width: calc(33.33% - 10px);
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .certificates {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .certificate {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            width: calc(50% - 10px);
+            transition: transform 0.3s ease;
+        }
+
+        .certificate:hover {
+            transform: translateY(-5px);
+        }
+
+        .certificate img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .download-btn {
+            background-color: #ff00de;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .download-btn:hover {
+            background-color: #d600ba;
+        }
+
+        @media (max-width: 768px) {
+            .project-photo, .certificate {
+                width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-photo, .certificate {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+         <header class="glass-effect">
+            <img src="profil.jpg" alt="Foto Profil Naufal Habibi" class="profile-photo">
+            <h1>NAUFAL HABIBI</h1>
+            <h2>Hardware and Software Engineer</h2>
+        </header>
+
+        <section class="glass-effect">
+            <h2>Kontak</h2>
+            <p>Telepon: 0858-9180-6242</p>
+            <p>Email: officialnaufalh@gmail.com</p>
+            <p>Instagram: @nfl.xyz</p>
+            <p>Domisili: Tarumajaya, Kab. Bekasi</p>
+        </section>
+
+        <section class="glass-effect">
+            <h2>Tentang Saya</h2>
+            <p>Salam, saya Naufal Habibi, saya berminat dalam dunia elektronika dan pemrograman. Saya telah memperdalam keahlian dalam berbagai bahasa pemrograman seperti Arduino, HTML, CSS, PHP, C++, dan Java.</p>
+            <p>Selain itu, saya juga memiliki latar belakang yang kuat dalam bidang elektronika, termasuk keterampilan dalam Troubleshooting dan Soldering. Dengan kombinasi keterampilan pemrograman dan penguasaan teknik elektronika, Saya yakin bahwa kontribusi saya akan menjadi aset berharga bagi perusahaan.</p>
+        </section>
+
+        <section class="glass-effect">
+            <h2>Pendidikan</h2>
+            <ul>
+                <li>2022-2025: SMK Negeri 5 Kota Bekasi, Kelas Khusus Industri Samsung</li>
+                <li>2019-2022: SMP Budi Darma</li>
+                <li>2013-2019: Madrasah Ibtidaiyah At-Taqwa 19 KP.Bogor</li>
+            </ul>
+        </section>
+
+        <section class="glass-effect">
+            <h2>Keahlian</h2>
+            <ul>
+                <li>Elektronika</li>
+                <li>Program Komputer</li>
+                <li>Editor Video</li>
+                <li>Web Developer</li>
+                <li>Desain grafis</li>
+            </ul>
+        </section>
+
+        <section class="glass-effect">
+            <h2>Kemampuan berbahasa</h2>
+            <ul>
+                <li>Inggris</li>
+                <li>Indonesia</li>
+            </ul>
+        </section>
+
+        <section class="glass-effect">
+            <h2>Pengalaman Project</h2>
+            <h3>Hardware</h3>
+            <ul>
+                <li>Berpengalaman dalam Teaching Factory Tech and Service</li>
+                <li>Instalasi jaringan di CV Arsi Labora</li>
+                <li>Instalasi PABX di CV Arsi Labora</li>
+                <li>Membuat prototype SmartHome System</li>
+                <li>Maintenance PC Madrasah Ibtidaiyah At-Taqwa 19 KP.Bogor</li>
+                <li>Perbaikan Handphone di kelas Samsung</li>
+            </ul>
+            <h3>Software</h3>
+            <ul>
+                <li>Memprogram alat IoT menggunakan Arduino IDE</li>
+                <li>Membuat berbagai website menggunakan php dan database mysql</li>
+                <li>Install sistem operasi pada komputer</li>
+                <li>Membuat program kasir qr code menggunakan java di netbeans IDE</li>
+                <li>Install sistem operasi openwrt pada router</li>
+                <li>Install cutom rom pada beberapa Handphone </li>
+            </ul>
+            <h3>Desain dan editing</h3>
+            <ul>
+                <li>Membuat video branding team Berkah Jaya Abadi</li>
+                <li>Membuat sablon baju</li>
+                <li>Membuat poster digital</li>
+            </ul>
+            <div class="project-photos">
+                <img src="instalasi jaringan.jpg" alt="Project 1" class="project-photo">
+                <img src="smarthome.jpg" alt="Project 2" class="project-photo">
+                <img src="lomba dobot.png" alt="Project 3" class="project-photo">
+                <img src="dobot2.png" alt="Project 4" class="project-photo">
+                <img src="aoc.png" alt="Project 5" class="project-photo">
+                <img src="robotik.png" alt="Project 6" class="project-photo">
+            </div>
+        </section>
+
+        <section class="glass-effect">
+            <h2>Sertifikat</h2>
+            <div class="certificates">
+                <div class="certificate">
+                    <img src="certificate1.jpg" alt="Sertifikat 1">
+                    <h3>Sertifikat 1</h3>
+                    <a href="certificate1.pdf" class="download-btn" download>Download PDF</a>
+                </div>
+                <div class="certificate">
+                    <img src="certificate2.jpg" alt="Sertifikat 2">
+                    <h3>Sertifikat 2</h3>
+                    <a href="certificate2.pdf" class="download-btn" download>Download PDF</a>
+                </div>
+                <div class="certificate">
+                    <img src="certificate3.jpg" alt="Sertifikat 3">
+                    <h3>Sertifikat 3</h3>
+                    <a href="certificate3.pdf" class="download-btn" download>Download PDF</a>
+                </div>
+                <div class="certificate">
+                    <img src="certificate4.jpg" alt="Sertifikat 4">
+                    <h3>Sertifikat 4</h3>
+                    <a href="certificate4.pdf" class="download-btn" download>Download PDF</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
