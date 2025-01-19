@@ -5,187 +5,336 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naufal Habibi - Hardware and Software Engineer</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #fff;
-            background: url('bg.jpg') no-repeat center center fixed;
-            background-size: cover;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
-        }
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background: url('bg.jpg') no-repeat center center fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
 
-        .container {
-            max-width: 1000px;
-            width: 100%;
-            padding: 50px;
-            margin: 0 auto;
-        }
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    animation: starMove 200s linear infinite;
+    z-index: 1;
+}
 
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+@keyframes starMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(-2000px); }
+}
 
-        .glass-effect:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
+.container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 50px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
 
-        h1, h2, h3 {
-            color: #fff;
-            margin-bottom: 15px;
-        }
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                0 0 20px rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        h1 {
-            font-size: 3rem;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
+.glass-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15),
+                0 0 30px rgba(0, 255, 255, 0.3);
+}
 
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
-            }
-        }
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    margin-bottom: 15px;
+}
 
-        .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px;
-            display: block;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            animation: float 3s ease-in-out infinite;
-        }
+a {
+    color: #0ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
+a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #0ff;
+}
 
-        ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #0ff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
 
-        li {
-            margin-bottom: 10px;
-            position: relative;
-        }
+a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
 
-        li::before {
-            content: '▹';
-            position: absolute;
-            left: -20px;
-            color: #ff00de;
-        }
 
-        .project-photos {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-        }
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: cyberpunkGlow 2s ease-in-out infinite alternate;
+}
 
-        .project-photo {
-            width: calc(33.33% - 10px);
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
+@keyframes cyberpunkGlow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff, 0 0 20px #0ff, 0 0 35px #0ff;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 70px #0ff;
+    }
+}
 
-        .project-photo:hover {
-            transform: scale(1.05);
-        }
+.profile-section {
+    text-align: center;
+    position: relative;
+}
 
-        .certificates {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    border: 4px solid rgba(0, 255, 255, 0.3);
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
 
-        .certificate {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            width: calc(50% - 10px);
-            transition: transform 0.3s ease;
-        }
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
 
-        .certificate:hover {
-            transform: translateY(-5px);
-        }
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
 
-        .certificate img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .download-btn {
-            background-color: #ff00de;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-        }
+.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
 
-        .download-btn:hover {
-            background-color: #d600ba;
-        }
+.social-icon img {
+    width: 25px;
+    height: 25px;
+}
 
-        @media (max-width: 768px) {
-            .project-photo, .certificate {
-                width: calc(50% - 10px);
-            }
-        }
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
 
-        @media (max-width: 480px) {
-            .project-photo, .certificate {
-                width: 100%;
-            }
-        }
+li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+li::before {
+    content: '▹';
+    position: absolute;
+    left: -20px;
+    color: #0ff;
+}
+
+.project-photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.project-photo {
+    width: calc(33.33% - 10px);
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+}
+
+.project-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.certificates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.certificate {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: calc(50% - 10px);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.certificate:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.certificate img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.download-btn {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.download-btn:hover {
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .project-photo {
+        width: calc(50% - 10px);
+    }
+
+    .certificate {
+        width: 100%;
+    }
+
+    .social-media-icons {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-photo {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .glass-effect {
+        padding: 15px;
+    }
+}
+
     </style>
 </head>
 <body>
     <div class="container">
-         <header class="glass-effect">
-            <img src="profil.jpg" alt="Foto Profil Naufal Habibi" class="profile-photo">
+        <header class="glass-effect">
+            <div class="profile-section">
+                <img src="profil.jpg" alt="Foto Profil Naufal Habibi" class="profile-photo">
+                <div class="social-media-icons">
+                    <a href="https://www.instagram.com/nfl.xyz/" class="social-icon" target="_blank">
+                        <img src="instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/falzsenpai/photos" class="social-icon" target="_blank">
+                        <img src="facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.youtube.com/@naufalhabibi12" class="social-icon" target="_blank">
+                        <img src="youtube.png" alt="YouTube">
+                    </a>
+                    <a href="https://www.tiktok.com/@naufal.art12" class="social-icon" target="_blank">
+                        <img src="tiktok.png" alt="TikTok">
+                    </a>
+                </div>
+            </div>
             <h1>NAUFAL HABIBI</h1>
             <h2>Hardware and Software Engineer</h2>
         </header>
@@ -244,13 +393,16 @@
                 <li>Perbaikan Handphone di kelas Samsung</li>
             </ul>
             <h3>Software</h3>
-            <ul>
-                <li>Memprogram alat IoT menggunakan Arduino IDE</li>
-                <li>Membuat berbagai website menggunakan php dan database mysql</li>
-                <li>Install sistem operasi pada komputer</li>
-                <li>Membuat program kasir qr code menggunakan java di netbeans IDE</li>
-                <li>Install sistem operasi openwrt pada router</li>
-                <li>Install cutom rom pada beberapa Handphone </li>
+<ul>
+    <li>Memprogram website <a href="https://perpussmkn5bekasi.rf.gd" target="_blank" style="color: #0ff; text-decoration: none; transition: all 0.3s ease;">Perpustakaan SMKN 5 Kota Bekasi</a></li>
+    <li>Memprogram website general affair <a href="https://generalaffairippi.rf.gd" target="_blank" style="color: #0ff; text-decoration: none; transition: all 0.3s ease;">PT. Inti Pantja Press Industri</a></li>
+    <li>Memprogram alat IoT menggunakan Arduino IDE</li>
+    <li>Membuat berbagai website menggunakan php dan database mysql</li>
+    <li>Install sistem operasi pada komputer</li>
+    <li>Membuat program kasir qr code menggunakan java di netbeans IDE</li>
+    <li>Install sistem operasi openwrt pada router</li>
+    <li>Install cutom rom pada beberapa Handphone </li>
+</ul>
             </ul>
             <h3>Desain dan editing</h3>
             <ul>
@@ -258,6 +410,10 @@
                 <li>Membuat sablon baju</li>
                 <li>Membuat poster digital</li>
             </ul>
+        </section>
+
+        <section class="glass-effect">
+            <h2>Foto Project</h2>      
             <div class="project-photos">
                 <img src="instalasi jaringan.jpg" alt="Project 1" class="project-photo">
                 <img src="smarthome.jpg" alt="Project 2" class="project-photo">
@@ -265,6 +421,9 @@
                 <img src="dobot2.png" alt="Project 4" class="project-photo">
                 <img src="aoc.png" alt="Project 5" class="project-photo">
                 <img src="robotik.png" alt="Project 6" class="project-photo">
+                <img src="web GA.png" alt="Project 7" class="project-photo">
+                <img src="web GA2.png" alt="Project 8" class="project-photo">
+                <img src="web perpus.png" alt="Project 9" class="project-photo">
             </div>
         </section>
 
@@ -299,6 +458,5 @@
             </div>
         </section>
     </div>
-
 </body>
 </html>
